@@ -13,6 +13,9 @@ import (
 
 type Query struct {
 	xml.Name
+	Title			string	  `xml:"Items>Item>ItemAttributes>Title"`
+	URL             string    `xml:"Items>Item>DetailPageURL"`
+	Image			string 	  `xml:"Items>Item>LargeImage>URL"`
 	Manufacturer    string    `xml:"Items>Item>ItemAttributes>Manufacturer"`
 	MainCategories []string `xml:"Items>Item>BrowseNodes>BrowseNode>Name"`
 	ChildrenCategories []string `xml:"Items>Item>BrowseNodes>BrowseNode>Children>BrowseNode>Name"`

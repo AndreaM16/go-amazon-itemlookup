@@ -40,7 +40,7 @@ func Crawl(config configuration.Configuration) {
 			}
 			if len(item.Item) > 0 && len(q.Manufacturer) > 0 {
 				fmt.Println("Adding amazonEntry.Item . . .")
-				amazonEntry.Item = model.Item{Item : item.Item, Manufacturer: q.Manufacturer}
+				amazonEntry.Item = model.Item{Item : item.Item, Manufacturer: q.Manufacturer, Title: q.Title, Image: q.Image, URL: q.URL}
 				fmt.Println("Adding amazonEntry.Manufacturer . . .")
 				amazonEntry.Manufacturer = model.Manufacturer{Manufacturer: q.Manufacturer}
 				request.AddAmazonEntry(config, amazonEntry)
